@@ -6,10 +6,15 @@ const models = require ('./models/models')
 const app = express() //2)создадим объект вызвав функцию express.
 const cors = require('cors')
 const router = require ('./routes/index')
+const fileUpload = require('express-fileupload')
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
+const path = require('path')
+
 
 app.use(cors())
+app.use(fileUpload({}))
 app.use(express.json())
+app.use(express.static(path.resolve(__dirname,'static')))
 app.use('/api', router)
     //Обработка ошибок, последний MiddleHandler
 app.use(errorHandler)
