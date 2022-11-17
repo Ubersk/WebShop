@@ -49,9 +49,10 @@ class UserController {
         return res.json({token})
     }
 
-async check(req, res, next)
+async check(req, res, next) //Сгенерировать новый токен и отправить его обратно на клиент если пользователь постоянно использует аккаунт.
 {
-
+    const token = generateJwt(req.user.id, req.user.email, req.user.role)
+    return res.json({token})
 }
 }
 module.exports = new UserController()
