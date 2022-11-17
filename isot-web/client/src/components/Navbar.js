@@ -18,9 +18,9 @@ const NavBar = observer(() => {
                                 <Button variant={"outline-success"} className={'ms-2'}>Выйти</Button>
                             </Nav>
                             :
-                            <Nav className="ms-auto" style={{color: 'white'}}>
+                            <Nav className="ms-auto" style={{color: 'white', margin: '5'}}>
                                 <Button variant={"outline-success"} className={'ms-2'} onClick={() => user.setIsAuth(true)}>Авторизация</Button>
-                                <Button variant={"outline-success"} >Регистрация</Button>
+                                <Button variant={"outline-success"}  style={{color: 'white', margin: '5'}}>Регистрация</Button>
                             </Nav>
                         }
                     </Container>
