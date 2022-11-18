@@ -5,6 +5,14 @@ import Image from "react-bootstrap/Image";
 import iconmsg2 from '../Assets/iconmsg2.png'
 const DevicePage = () => {
    const device = {id:1, name:'12 pro', price: 10000, rating:0, img:'0f374242-47fc-4cf8-abf1-755b8016389b.jpg'}
+    const  description = [
+        {id:1, title:'Тема сообщения', description: 'Праздник'},
+        {id:2, title:'Автор', description: 'Вы'},
+        {id:3, title:'Телефон', description: '2282'},
+        {id:4, title:'Компьютер', description: 'N-059'},
+
+
+    ]
     return (
         <Container className={"mt-3"}>
             <Row>
@@ -32,6 +40,15 @@ const DevicePage = () => {
                     </Card>
                 </Col>
             </Row>
+            <Row className="d-flex flex-column m-3">
+                {description.map((info, index) =>
+                <Row key={info.id} style={{background: index % 2 === 0 ? 'AppWorkspace' : 'transparent', padding:10}}>
+                    {info.title}: {info.description}
+                </Row>
+
+                )}
+            </Row>
+
         </Container>
     );
 };
