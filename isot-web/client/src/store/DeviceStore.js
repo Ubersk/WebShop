@@ -1,4 +1,5 @@
 import {makeAutoObservable} from "mobx";
+import {type} from "@testing-library/user-event/dist/type";
 
 export default class DeviceStore
 {
@@ -6,13 +7,17 @@ export default class DeviceStore
     {
         this._types =
             [
-                {id:1, name:'Смартфоны'},
-                {id:2, name:'Холодильники'}
+                {id:1, name:'Входящие'},
+                {id:2, name:'Исходящие'},
+                {id:3, name:'Корзина'},
+                {id:4, name:'Спам'},
             ]
         this._brands =
             [
-                {id:1, name:'Samsung'},
-                {id:2, name:'Apple'},
+                {id:1, name:'Создать'},
+                {id:2, name:'Ответить'},
+                {id:3, name:'Переслать'},
+                {id:4, name:'Удалить'},
             ]
         this._devices =
             [
@@ -20,6 +25,8 @@ export default class DeviceStore
                 {id:2, name:'M10', price: 1000, rating:0, img:'e02c2466-7d32-4a0b-8f6f-06f3950d7043.jpg'},
                 {id:8, name:'13 pro', price: 40000, rating:0, img:'aac4cfd0-0a75-4c3b-83bf-e10fe0f60078.jpg'},
             ]
+        this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -37,6 +44,15 @@ export default class DeviceStore
         this._devices = devices
     }
 
+    setSelectedType(type)
+    {
+        this._selectedType = type
+    }
+    setSelectedBrand(brand)
+    {
+        this._selectedBrand = brand
+    }
+
     get types()
     {
         return this ._types
@@ -49,5 +65,13 @@ export default class DeviceStore
     get devices()
     {
         return this._devices
+    }
+    get selectedType()
+    {
+        return this._selectedType
+    }
+    get selectedBrand()
+    {
+        return this._selectedBrand
     }
 }
