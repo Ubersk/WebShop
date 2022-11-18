@@ -47,6 +47,25 @@ const Admin = () => {
                 Восстановить беседу(dev)
             </Button>
 
+            <Button
+                variant={"outline-success"}
+                className="mt-4 p-2"
+                onClick={() => setTypeVisible(true)}>
+                Добавить тип
+            </Button>
+            <Button
+                variant={"outline-success"}
+                className="mt-4 p-2"
+                onClick={() => setBrandVisible(true)}>
+                Добавить брэнд
+            </Button>
+            <Button
+                variant={"outline-success"}
+                className="mt-4 p-2"
+                onClick={() => setDeviceVisible(true)}>
+                Добавить устройство
+            </Button>
+
             <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
             <CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>
             <CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>

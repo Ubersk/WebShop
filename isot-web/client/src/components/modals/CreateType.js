@@ -11,19 +11,19 @@ const CreateType = ({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Удалить сообщения
+                    Добавить тип
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Control
-                    placeholder={"Введите id"}
+                    placeholder={"Введите тип"}
                     />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-dark" onClick={onHide}>Закрыть</Button>
-                <Button variant="outline-danger" onClick={onHide}>Удалить</Button>
+                <Button variant="outline-success" onClick={onHide}>Добавить</Button>
             </Modal.Footer>
         </Modal>
     );

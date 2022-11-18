@@ -11,19 +11,19 @@ const CreateBrand = ({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Удалить пользователя
+                    Добавить брэнд
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Control
-                        placeholder={"Введите ФИО"}
+                        placeholder={"Введите название"}
                     />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-dark" onClick={onHide}>Закрыть</Button>
-                <Button variant="outline-danger" onClick={onHide}>Удалить</Button>
+                <Button variant="outline-success" onClick={onHide}>Добавить</Button>
             </Modal.Footer>
         </Modal>
     );
