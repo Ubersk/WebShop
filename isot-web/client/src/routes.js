@@ -5,17 +5,11 @@ import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import DevicePage from "./pages/DevicePage";
 
-export  const authRoutes = [
-    {
-        path: ADMIN_ROUTE, //Путь ссылка по которой та или иная страница будет обрабатываться
-        Component: Admin // ПО URL /admin будет вызываться компонента Admin
-    },
-    {
-        path: BASKET_ROUTE,
-        Component: Basket
-    },
-]
-export  const  publicRoutes = [
+export const authRoutes = [{
+    path: ADMIN_ROUTE, //Путь ссылка по которой та или иная страница будет обрабатываться
+    Component: Admin // ПО URL /admin будет вызываться компонента Admin
+}, {path: BASKET_ROUTE, Component: Basket},]
+export const publicRoutes = [
     {
         path: SHOP_ROUTE,
         Component: Shop
