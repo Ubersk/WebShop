@@ -3,9 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../routes";
 import Shop from "../pages/Shop";
 import { Context } from "../index";
+import Admin from "../pages/Admin";
 
 const AppRouter = () => {
   const { user } = useContext(Context);
+  console.log(user.isAuth);
   return (
     <Routes>
       {user.isAuth &&
@@ -15,7 +17,7 @@ const AppRouter = () => {
       {publicRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} element={<Component />} exact />
       ))}
-      <Route path="*" element={<Shop />} />
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 };

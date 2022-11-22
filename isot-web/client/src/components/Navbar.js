@@ -9,7 +9,7 @@ import {
   SHOP_ROUTE,
 } from "../utils/consts";
 import { observer } from "mobx-react-lite";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
@@ -22,14 +22,14 @@ const NavBar = observer(() => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <NavLink style={{ color: "white" }} href={SHOP_ROUTE}>
+        <Link style={{ color: "white" }} to="/">
           Клиент сообщений
-        </NavLink>
+        </Link>
         {user.isAuth ? (
           <Nav className="ms-auto" style={{ color: "white" }}>
             <Button
               variant={"outline-success"}
-              href={ADMIN_ROUTE}
+              onClick={() => history(ADMIN_ROUTE)}
               className={"ms-2"}
             >
               Админ панель
