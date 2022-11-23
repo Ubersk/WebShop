@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-import { type } from "@testing-library/user-event/dist/type";
 
 export default class DeviceStore {
   constructor() {
@@ -8,8 +7,11 @@ export default class DeviceStore {
     this._devices = [];
     this._selectedType = {};
     this._selectedBrand = {};
+    //Поле отвечающие за текущую страницу
     this._page = 1;
+    //Отвечает за общее количество товаров, котоыре доступны по данному вопросу
     this._totalCount = 0;
+    //Количество товаров на одной странице
     this._limit = 3;
     makeAutoObservable(this);
   }
@@ -26,6 +28,7 @@ export default class DeviceStore {
   }
 
   setSelectedType(type) {
+    this.setPage(1);
     this._selectedType = type;
   }
 
@@ -36,6 +39,7 @@ export default class DeviceStore {
     this._totalCount = count;
   }
   setSelectedBrand(brand) {
+    this.setPage(1);
     this._selectedBrand = brand;
   }
 
